@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
+@import "tailwindcss";
+
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.heroimg {
+  background-image: url("./assets/beston-banner.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 750px;
+}
+.texnika1 {
+  background-image: url("./assets/textnika1.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.header-nav {
+  position: sticky;
+  top: 0;
+}
+.nav_link {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  border-bottom: 2px solid transparent;
+  margin: 0 !important;
+  position: relative;
+
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+.nav_link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.5s ease-in-out;
+}
+.nav_link:hover {
+  color: black;
+}
+.nav_link:hover::after {
+  width: 100%;
+  animation: navbar 0.5s forwards;
+}
+.nav_link:not(:hover)::after {
+  animation: navbar-end 0.5s forwards;
+}
+@keyframes navbar {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  100% {
+    left: 0;
+    width: 100%;
+  }
+}
+@keyframes navbar-end {
+  0% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+.title_main {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 37px;
+  font-style: normal;
+}
+
+.hero-h {
+  animation: rotateText 0.8s ease-in-out forwards;
+  transition-delay: 0.2;
+  line-height: 35px;
+}
+
+@keyframes rotateText {
+  from {
+    transform: rotateX(-45deg) translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: rotateX(0deg) translateY(0);
+    opacity: 1;
+  }
+}
+.hero-p {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  animation: rotateP 0.8s ease-in-out forwards;
+  transition-delay: 0.2;
+  font-size: 13px;
+}
+
+@keyframes rotateP {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animation {
+  animation: animation 0.8s ease-in-out forwards;
+  transition-delay: 0.2;
+}
+@keyframes animation {
+  from {
+    transform: rotateX(-45deg) translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: rotateX(0deg) translateY(0);
+    opacity: 1;
+  }
+}
+.img-animation {
+  transition: transform 2s ease-in-out;
+}
+
+.img-animation:hover {
+  transform: scale(1.2);
+}
+.swiper-slide {
+  transition: all 0.4s ease-in-out !important;
+}
+.swiper-slide:hover {
+  background-color: #f2f2f2 !important;
+}
+.swiper-img {
+  transition: all 0.4s ease-in-out;
+}
+.swiper-img:hover {
+  transform: scale(0.95);
+}
+.swiper-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dedede;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.swiper-btn:hover {
+  color: white;
+  background-color: black;
+}
+.textarea-with-prefix {
+  position: relative;
+}
+.ant-form-item {
+  margin-bottom: 0;
+}
+.textarea-prefix {
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.textarea-with-prefix .ant-input {
+  padding-left: 60px !important;
+}
